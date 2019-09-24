@@ -1,0 +1,6 @@
+use_frameworks!
+target 'YFKit_Tests' do
+  pod 'YFKit', :path => '../'
+  
+  
+end
