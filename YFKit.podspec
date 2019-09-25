@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'YFKit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of YFKit.'
+  s.summary          = 'A collection of iOS components.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -30,13 +30,20 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'YFKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'YFKit' => ['YFKit/Assets/*.png']
-  # }
+  s.source_files = 'YFKit/Classes/**/*.{h,m}'
+  s.resource = "YFKit/Classes/UI/PickerView/BRPickerView/AddressPickerView/BRPickerView.bundle"
+  #s.resource_bundles = {
+  #   'YFKit' => ['YFKit/Classes/UI/PickerView/BRPickerView/AddressPickerView/BRPickerView.bundle/BRCity.plist']
+  #}
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.public_header_files = 'Pod/Classes/**/*.h'   #公开头文件地址
+
+  s.public_header_files = 'YFKit/Classes/**/*.h'
+  s.prefix_header_contents = '#import <Masonry/Masonry.h>','#import <Toast/UIView+Toast.h>','#import <YFKit/YFKit.h>'
+
+
+  s.dependency 'Toast'
+  s.dependency 'Masonry'
+
 end
