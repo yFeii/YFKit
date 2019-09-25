@@ -27,3 +27,5 @@ yFeii, 1486662452@qq.com
 ## License
 
 YFKit is available under the MIT license. See the LICENSE file for more info.
+
+A collection of iOS components.
