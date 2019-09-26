@@ -32,8 +32,8 @@
 
 
 #define USERDEFAULT                                           [NSUserDefaults standardUserDefaults]
-#define K_ScreenWidth                                         [[XHTools tool] screenWidth]
-#define K_ScreenHeight                                        [[XHTools tool] screenHeight]
+#define K_ScreenWidth                                         [[YFTools tool] screenWidth]
+#define K_ScreenHeight                                        [[YFTools tool] screenHeight]
 #define YF_KeyWindow                                          [UIApplication sharedApplication].keyWindow
 
 
