@@ -22,6 +22,8 @@ typedef NS_ENUM(NSUInteger, YFLoginInputViewType) {
 
 @property (nonatomic, assign) YFLoginInputViewType type;
 
+@property (nonatomic, strong) UILabel *lineLab;
+
 @property (nonatomic, copy) void(^textFieldChangedCallBack)(NSString *text);
 
 @property (nonatomic, copy) void(^clickSendVerifyCodeCallBack)(void);

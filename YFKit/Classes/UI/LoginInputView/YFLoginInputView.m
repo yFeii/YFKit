@@ -11,7 +11,6 @@
 @interface YFLoginInputView ()
 
 @property (nonatomic, strong) UIView *backView;
-@property (nonatomic, strong) UILabel *lineLab;
 @property (nonatomic, strong) UIButton *iconBtn;
 @property (nonatomic, strong) UIButton *timeBtn;
 @end
