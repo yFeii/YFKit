@@ -13,6 +13,9 @@
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UIButton *iconBtn;
 @property (nonatomic, strong) UIButton *timeBtn;
+
+@property (nonatomic, assign) BOOL isCounter;
+
 @end
 
 @implementation YFLoginInputView
@@ -57,7 +60,8 @@
     [self.backView addSubview:self.iconBtn];
     
     self.timeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.timeBtn setTitleColor:UIColorHexMake(@"#007eff") forState:UIControlStateNormal];
+    [self.timeBtn setTitleColor:UIColorHexMake(@"#abb0c4") forState:UIControlStateDisabled];
+    [self.timeBtn setTitleColor:UIColorHexMake(@"#4179F7") forState:UIControlStateNormal];
     self.timeBtn.titleLabel.font = [UIFont systemFontOfSize:16];
     [self.timeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     [self.backView addSubview:self.timeBtn];
@@ -65,7 +69,8 @@
 
     YFLoginInputViewType tempType = self.type;
     self.type = tempType;
-    
+    self.isCounter = false;
+
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -108,16 +113,15 @@
         [self.inputTextField resignFirstResponder];
     }
 }
-- (void)startTime
-{
-    self.timeBtn.selected = !self.timeBtn.selected;
-    if (self.timeBtn.selected) {
-        [self.timeBtn setTitleColor:UIColorHexMake(@"#4179F7") forState:UIControlStateNormal];
-        [self getVerificationCodeRunTimeNumber];
-    }else {
-        [self.timeBtn setTitleColor:UIColorHexMake(@"#4179F7") forState:UIControlStateNormal];
-        [self.timeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
-    }
+
+- (void)setVerifyBtnEnable:(BOOL)enabled{
+    
+    if (self.isCounter) return;
+    self.timeBtn.enabled = enabled;
+}
+- (void)startTime {
+    
+    [self getVerificationCodeRunTimeNumber];
 }
 
 - (void)setText:(NSString *)text {
@@ -174,13 +178,15 @@
         if (timeout <= 0) {
             dispatch_source_cancel(timer);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self startTime];
                 self.timeBtn.enabled = YES;
+                self.isCounter = false;
+                [self.timeBtn setTitle:@"重新获取" forState:UIControlStateNormal];
             });
         }else {
             NSInteger seconds = timeout;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.timeBtn setTitle:[NSString stringWithFormat:@"%.2lds后获取",(long)seconds] forState:UIControlStateNormal];
+                self.isCounter = true;
+                [self.timeBtn setTitle:[NSString stringWithFormat:@"%.2lds后获取",(long)seconds] forState:UIControlStateDisabled];
                 self.timeBtn.enabled = NO;
             });
             timeout --;

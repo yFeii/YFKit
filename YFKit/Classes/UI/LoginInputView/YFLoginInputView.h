@@ -42,4 +42,5 @@ typedef NS_ENUM(NSUInteger, YFLoginInputViewType) {
 - (void)setup;
 
 - (void)startTime;
+- (void)setVerifyBtnEnable:(BOOL)enabled;
 @end
