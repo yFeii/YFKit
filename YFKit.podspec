@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YFKit'
-  s.version          = '0.7.3'
+  s.version          = '0.7.4'
   s.summary          = 'A collection of iOS components.'
 
 # This description is used to generate tags and improve search results.

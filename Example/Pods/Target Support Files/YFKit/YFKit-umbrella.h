@@ -36,8 +36,6 @@
 #import "YFBaseRequest.h"
 #import "YFRequestConcentrateHandler.h"
 #import "YFResponseConcentrateHandler.h"
-#import "YFRequestConcentrateHandler+Intercepter.h"
-#import "YFResponseConcentrateHandler+Intercept.h"
 #import "YFTools.h"
 #import "YFBaseAlertView.h"
 #import "YFCornerView.h"

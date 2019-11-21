@@ -8,7 +8,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - Masonry (1.1.0)
   - Toast (4.0.0)
-  - YFKit (0.7.1):
+  - YFKit (0.7.4):
     - Masonry
     - Toast
     - YTKNetwork
@@ -34,7 +34,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  YFKit: 71083f038fe83ada41db5e3b7d267d9fb8c1ac25
+  YFKit: 67b19af5288e36fbbba922f56e1f35ae0c3756a3
   YTKNetwork: 19be749c30f0512ada07180f4637b4b67bc8ddc2
 
 PODFILE CHECKSUM: 4a9840773c164907bd819a8d7fff34d0a65d2e95

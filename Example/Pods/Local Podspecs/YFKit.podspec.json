@@ -1,6 +1,6 @@
 {
   "name": "YFKit",
-  "version": "0.7.1",
+  "version": "0.7.4",
   "summary": "A collection of iOS components.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/yFeii/YFKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/yFeii/YFKit.git",
-    "tag": "0.7.1"
+    "tag": "0.7.4"
   },
   "platforms": {
     "ios": "8.0"
