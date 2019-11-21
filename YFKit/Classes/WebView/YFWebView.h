@@ -9,34 +9,33 @@
 #import <UIKit/UIKit.h>
 
 @protocol WKScriptMessageHandler;
-@class IMYWebView, JSContext;
+@class YFWebView, JSContext, WKWebView;
 
-@protocol IMYWebViewDelegate <NSObject>
+@protocol YFWebViewDelegate <NSObject>
 @optional
 
-- (void)webViewDidStartLoad:(IMYWebView*)webView;
-- (void)webViewDidFinishLoad:(IMYWebView*)webView;
-- (void)webView:(IMYWebView*)webView didFailLoadWithError:(NSError*)error;
-- (BOOL)webView:(IMYWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType;
+- (void)webViewDidStartLoad:(YFWebView *)webView;
+- (void)webViewDidFinishLoad:(YFWebView *)webView;
+- (void)webView:(YFWebView *)webView didFailLoadWithError:(NSError *)error;
+- (BOOL)webView:(YFWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 
 
-- (void)imy_observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context;
+- (void)yf_observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context;
 
 @end
 
 ///无缝切换UIWebView   会根据系统版本自动选择 使用WKWebView 还是  UIWebView
-@interface IMYWebView : UIView
+@interface YFWebView : UIView
 
 ///使用UIWebView
-- (instancetype)initWithFrame:(CGRect)frame usingUIWebView:(BOOL)usingUIWebView;
+- (instancetype)initWithFrame:(CGRect)frame;
 
 ///会转接 WKUIDelegate，WKNavigationDelegate 内部未实现的回调。
-@property (weak, nonatomic) id<IMYWebViewDelegate> delegate;
+@property (weak, nonatomic) id<YFWebViewDelegate> delegate;
 
 ///内部使用的webView
-@property (nonatomic, readonly) id realWebView;
-///是否正在使用 UIWebView
-@property (nonatomic, readonly) BOOL usingUIWebView;
+@property (nonatomic, readonly) WKWebView *realWebView;
+
 ///预估网页加载进度
 @property (nonatomic, readonly) double estimatedProgress;
 
@@ -44,8 +43,6 @@
 
 @property (nonatomic, readonly) BOOL isLoadSuccess;
 
-///只有ios7以上的UIWebView才能获取到，WKWebView 请使用下面的方法.
-@property (nonatomic, readonly) JSContext* jsContext;
 ///WKWebView 跟网页进行交互的方法。
 - (void)addScriptMessageHandler:(id<WKScriptMessageHandler>)scriptMessageHandler name:(NSString*)name;
 
