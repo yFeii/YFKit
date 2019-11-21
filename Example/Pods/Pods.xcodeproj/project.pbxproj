@@ -89,6 +89,8 @@
 		A5C16557DBCABA6794AD505FA2319AD7 /* CAGradientLayer+YFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB40BE44197B04DFA0607E2B6C0B583 /* CAGradientLayer+YFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE1F82D2C19B3843E3DC37EC25CB071F /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9649ECE5407A3D931B5121598A0645 /* Masonry.framework */; };
 		B14F23328434DB9C4AE2546CFEA3AEA8 /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD93463F138EF4CCB9F6F59CB15580 /* BRAddressModel.m */; };
+		B23562D5238675B9003F4CED /* NSURL+YFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B23562D3238675B9003F4CED /* NSURL+YFAdditions.h */; };
+		B23562D6238675B9003F4CED /* NSURL+YFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B23562D4238675B9003F4CED /* NSURL+YFAdditions.m */; };
 		B2AB29D335BA81E41C06C770D6A836C5 /* NSInvocation+YFAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 009DDC5969D9A21E6DEEB5B2BA046B1D /* NSInvocation+YFAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5EA9B8E01FEF98EE60C595B84CF2C92 /* NSInvocation+YFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A36AA378AEF1A54A567748E21DE5CC /* NSInvocation+YFAdd.m */; };
 		B7D645EC004610E8A581E532D28771EC /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DAA99BD72286EE08FF43E470434E17 /* MASViewConstraint.m */; };
@@ -272,6 +274,8 @@
 		AE9EB93928F2E3F854FABEC3CF10C6E5 /* YFPopoverAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YFPopoverAction.h; sourceTree = "<group>"; };
 		AEB445D6F7D374815F66640B0FB03312 /* UICollectionView+YFAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YFAdditions.h"; sourceTree = "<group>"; };
 		B1A36AA378AEF1A54A567748E21DE5CC /* NSInvocation+YFAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+YFAdd.m"; sourceTree = "<group>"; };
+		B23562D3238675B9003F4CED /* NSURL+YFAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+YFAdditions.h"; sourceTree = "<group>"; };
+		B23562D4238675B9003F4CED /* NSURL+YFAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+YFAdditions.m"; sourceTree = "<group>"; };
 		B3764B16B30A8A46BE756B957B9751F1 /* YFPopoverAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YFPopoverAction.m; sourceTree = "<group>"; };
 		B489D4657ED7865D4CD8F4E067AE433C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B669896E9809CC05A35FB049B01EF083 /* YFPopoverViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YFPopoverViewCell.h; sourceTree = "<group>"; };
@@ -743,6 +747,15 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		B23562D223867589003F4CED /* NSUrl */ = {
+			isa = PBXGroup;
+			children = (
+				B23562D3238675B9003F4CED /* NSURL+YFAdditions.h */,
+				B23562D4238675B9003F4CED /* NSURL+YFAdditions.m */,
+			);
+			path = NSUrl;
+			sourceTree = "<group>";
+		};
 		B35051C698121738B96519A4711E75C1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +849,7 @@
 		EB31B12EA897DC1A9137A68BA75E08B4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				B23562D223867589003F4CED /* NSUrl */,
 				2D8545DC3AC36BAF0F24A9BE480945C7 /* CAGradientLayer */,
 				E8CE49F703A0A2AB296525DDA6E445CC /* NSDate */,
 				8B5C9AA807D11257AA4C71073F0C1E38 /* NSError */,
@@ -966,6 +980,7 @@
 			files = (
 				8D65CE579E516BDD5FB36CAA21D693F6 /* MASCompositeConstraint.h in Headers */,
 				9D546E1168C04B0B2EAE005D9275D18B /* MASConstraint+Private.h in Headers */,
+				B23562D5238675B9003F4CED /* NSURL+YFAdditions.h in Headers */,
 				941955A19C40899D275604E6E9C21A6D /* MASConstraint.h in Headers */,
 				FAFBFA90F7BC3E7CF50F8A5CF0A8B264 /* MASConstraintMaker.h in Headers */,
 				8D4D1F6E4709EBB13974E95DC1059DDC /* MASLayoutConstraint.h in Headers */,
@@ -1142,6 +1157,7 @@
 				7BFF65958F014760B6AC4742824892EB /* MASCompositeConstraint.m in Sources */,
 				E8DD5D1D406150E1C80AD015271B6848 /* MASConstraint.m in Sources */,
 				78B2727EE5D693F58D019DB098005101 /* MASConstraintMaker.m in Sources */,
+				B23562D6238675B9003F4CED /* NSURL+YFAdditions.m in Sources */,
 				8539B851E01A58467BE49CA3FA77223C /* MASLayoutConstraint.m in Sources */,
 				1972E85F0FCD0F3EAF28ED7CD036286E /* Masonry-dummy.m in Sources */,
 				297A3627CF2F032CBFDC61D1A3786E63 /* MASViewAttribute.m in Sources */,
