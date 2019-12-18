@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "YFBaseRequest.h"
-
+#import "YTKNetworkConfig.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFRequestConcentrateHandler : NSObject
+@interface YFRequestConcentrateHandler : NSObject<YTKUrlFilterProtocol>
 
-@property (nonatomic, strong) YFBaseRequest *baseRequest;
 + (instancetype)shareInstance;
 
 //参数的统一处理。默认不处理，如需处理可通过category override
-- (NSDictionary *)reformParams:(NSDictionary *)params;
-- (BOOL)handleEventWithRequest:(YFBaseRequest *)request;
+- (NSString *)filterUrl:(NSString *)originUrl request:(YTKBaseRequest *)request;
+
 @end
+
 
 NS_ASSUME_NONNULL_END

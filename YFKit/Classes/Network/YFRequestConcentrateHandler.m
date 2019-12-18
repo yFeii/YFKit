@@ -8,6 +8,7 @@
 
 #import "YFRequestConcentrateHandler.h"
 
+
 @implementation YFRequestConcentrateHandler
 
 + (instancetype)shareInstance {
@@ -28,14 +29,16 @@
     return self;
 }
 
-
-- (BOOL)handleEventWithRequest:(YFBaseRequest *)request {
+- (NSString *)filterUrl:(NSString *)originUrl withRequest:(YFBaseRequest *)request {
     
-    return YES;
+    
+    return [self filterUrl:originUrl request:request];
 }
 
-- (NSDictionary *)reformParams:(NSDictionary *)params {
+
+- (NSString *)filterUrl:(NSString *)originUrl request:(YFBaseRequest *)request {
     
-    return params;
+    return originUrl;
 }
+
 @end

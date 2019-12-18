@@ -59,10 +59,8 @@
         }
     }
     
-    if ([[YFRequestConcentrateHandler shareInstance] handleEventWithRequest:self]) {
-        self.reqTaskState = YFBaseRequestTaskStateIsSending;
-        [super start];
-    }
+    self.reqTaskState = YFBaseRequestTaskStateIsSending;
+    [super start];
 }
 
 - (YFBaseRequestTaskState)taskState {
@@ -109,14 +107,7 @@
 - (id)requestArgument {
     
     id param = [self.child requestParams];
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    NSDictionary *commonParam = [YFAPIUtils shareInstance].commonParam;
-    if ([param isKindOfClass:[NSDictionary class]]) {
-        
-        [params addEntriesFromDictionary:param];
-    }
-    [params addEntriesFromDictionary:commonParam];
-    return params;
+    return param;
 }
 
 
