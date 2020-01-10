@@ -11,6 +11,8 @@
 
 @interface UIViewController (YFAdditions)
 
+- (void)setTabbarSelectedIndex:(NSUInteger)index;
+- (UIViewController *)getCurrentVC;
 @end
 
 
