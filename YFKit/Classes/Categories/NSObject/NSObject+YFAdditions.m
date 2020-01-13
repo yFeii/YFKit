@@ -10,6 +10,26 @@
 
 @implementation NSObject (YFAdditions)
 
++ (void)setTabbarSelectedIndex:(NSUInteger)index{
+    
+    UITabBarController *tbc = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    if (index >= tbc.childViewControllers.count) return;
+    UIViewController *topVC = [UIViewController getCurrentVC];
+    while (topVC.presentingViewController) {
+        topVC = topVC.presentingViewController;
+    }
+    if (topVC.presentedViewController) {
+        [topVC dismissViewControllerAnimated:false completion:^{
+            UIViewController *currentC = [UIViewController getCurrentVC];
+            [currentC.navigationController popToRootViewControllerAnimated:false];
+            [tbc setSelectedIndex:index];
+        }];
+    }else{
+        [topVC.navigationController popToRootViewControllerAnimated:false];
+        [tbc setSelectedIndex:index];
+    }
+}
+
 //获取当前屏幕显示的viewcontroller
 + (UIViewController *)getCurrentVC {
     

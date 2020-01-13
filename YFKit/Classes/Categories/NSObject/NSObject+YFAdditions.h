@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSObject (YFAdditions)
 
 + (UIViewController *)getCurrentVC;
-
++ (void)setTabbarSelectedIndex:(NSUInteger)index;
 @end
 
 NS_ASSUME_NONNULL_END
