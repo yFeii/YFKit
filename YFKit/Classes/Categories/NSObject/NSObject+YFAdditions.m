@@ -14,13 +14,13 @@
     
     UITabBarController *tbc = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     if (index >= tbc.childViewControllers.count || index < 0) return;
-    UIViewController *topVC = [UIViewController getCurrentVC];
+    UIViewController *topVC = [self getCurrentVC];
     while (topVC.presentingViewController) {
         topVC = topVC.presentingViewController;
     }
     if (topVC.presentedViewController) {
         [topVC dismissViewControllerAnimated:false completion:^{
-            UIViewController *currentC = [UIViewController getCurrentVC];
+            UIViewController *currentC = [self getCurrentVC];
             [currentC.navigationController popToRootViewControllerAnimated:false];
             [tbc setSelectedIndex:index];
         }];
