@@ -13,7 +13,7 @@
 + (void)setTabbarSelectedIndex:(NSUInteger)index{
     
     UITabBarController *tbc = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    if (index >= tbc.childViewControllers.count) return;
+    if (index >= tbc.childViewControllers.count || index < 0) return;
     UIViewController *topVC = [UIViewController getCurrentVC];
     while (topVC.presentingViewController) {
         topVC = topVC.presentingViewController;
